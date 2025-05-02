@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
 
-mongoose.connect("mongoose://127.0.0.1:27017/scatch")
 
 const userSchema = mongoose.Schema({
-    fullname : String,
+    fullname : {
+        type:String,
+        minLength:3,
+        trim:true,
+    },
     email : String,
     password : String,
     cart:{
